@@ -4,13 +4,16 @@ import cl.ravenhill.makarena.model.Card
 
 open class Player(val name: String) {
 
-  private var backingDeck = emptyArray<Card>()
-  var deck: Array<Card>
-    get() = backingDeck.copyOf()
+  private var backingDeck = mutableListOf<Card>()
+  var deck: MutableList<Card>
+    get() = backingDeck.toMutableList()
     set(value) {
       backingDeck = value
     }
 
+  fun draw(): Card {
+    return backingDeck.removeFirst()
+  }
   override fun equals(other: Any?): Boolean {
     return other is Player && other.name == this.name
   }
