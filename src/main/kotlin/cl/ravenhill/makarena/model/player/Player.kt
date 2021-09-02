@@ -11,13 +11,23 @@ open class Player(val name: String) {
       backingDeck = value
     }
 
+  private var backingHand = mutableListOf<Card>()
+  var hand: List<Card>
+    get() = backingHand.toList()
+    set(value) {
+      backingHand = value.toMutableList()
+    }
+
   fun draw(): Card {
     return backingDeck.removeFirst()
   }
-  override fun equals(other: Any?): Boolean {
-    return other is Player && other.name == this.name
+
+  override fun equals(other: Any?) = other is Player && other.name == this.name
+
+  override fun hashCode() = name.hashCode()
+  fun selectFromHand(selectIdx: Int): Card {
+    TODO("Not yet implemented")
   }
 
-  val hand = mutableListOf<Card>()
   val graveyard = mutableListOf<Card>()
 }
