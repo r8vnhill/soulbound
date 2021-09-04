@@ -1,3 +1,8 @@
 package cl.ravenhill.makarena.model
 
-data class Card(val name: String, val attack: Int)
+interface Card {
+  val name: String
+}
+
+class Creature(override val name: String, val attack: Int) : Card
+
