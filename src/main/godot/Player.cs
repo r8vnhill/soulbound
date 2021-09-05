@@ -14,6 +14,9 @@ namespace Soulbound.main.godot {
     private Vector2 _velocity;
     [Export] public int Speed = 400; // How fast the player will move (pixels/sec).
 
+    /// <summary>
+    ///   Como yo
+    /// </summary>
     public override void _Ready() {
       Hide();
       _screenSize = GetViewport().Size;

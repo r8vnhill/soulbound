@@ -10,16 +10,25 @@ var _animated_sprite: AnimatedSprite
 
 
 func _ready():
+    """ Entry point.    """
     hide()
     screen_size = get_viewport_rect().size
+
     
 func start(pos: Vector2):
+    """ Resets the player's position and status.    """
     position = pos
     show()
     $CollisionShape2D.disabled = false
 
     
 func _process(delta: float):
+    """
+    Processes the input on each frame.
+    
+    :param delta:
+        time (in ms) elapsed since last frame.
+    """
     _velocity = Vector2()
     _velocity.x += UserInput.get_horizontal()
     _velocity.y += UserInput.get_vertical()
@@ -30,6 +39,7 @@ func _process(delta: float):
 
 
 func _update_position(delta: float):
+    """ Updates the player's position according to its velocity.    """
     if (_velocity.length() > 0):
         _velocity = _velocity.normalized() * speed
         _animated_sprite.play()
@@ -44,6 +54,7 @@ func _update_position(delta: float):
 
 
 func _rotate_sprite():
+    """ Rotates the sprite when the direction changes.  """
     if _velocity.x != 0 :
         _animated_sprite.animation = Animations.WALK
         _animated_sprite.flip_v = false
