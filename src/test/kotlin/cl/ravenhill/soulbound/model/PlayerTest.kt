@@ -1,6 +1,6 @@
-package cl.ravenhill.makarena.model
+package cl.ravenhill.soulbound.model
 
-import cl.ravenhill.makarena.model.player.Player
+import cl.ravenhill.soulbound.model.player.Player
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.property.Arb
 import io.kotest.property.arbitrary.int

@@ -1,6 +1,6 @@
 @file:Suppress("UnusedEquals")
 
-package cl.ravenhill.makarena.model
+package cl.ravenhill.soulbound.model
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.property.Arb

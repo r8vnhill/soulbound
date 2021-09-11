@@ -1,6 +1,6 @@
-package cl.ravenhill.makarena.model.player
+package cl.ravenhill.soulbound.model.player
 
-import cl.ravenhill.makarena.model.Card
+import cl.ravenhill.soulbound.model.Card
 
 open class Player(val name: String) {
 

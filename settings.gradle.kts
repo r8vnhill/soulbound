@@ -1,3 +1,3 @@
 
-rootProject.name = "makarena"
+rootProject.name = "soulbound"
 
