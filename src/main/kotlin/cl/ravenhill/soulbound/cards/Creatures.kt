@@ -2,14 +2,11 @@ package cl.ravenhill.soulbound.cards
 
 sealed interface Creature {
   val isSummonable: Boolean
+    get() = level.first == 1
+  val level: Pair<Int, Int>
+  val name: String
 }
 
-class Spirit(name: String, level: Pair<Int, Int>) : Creature {
-  override val isSummonable: Boolean
-    get() = TODO("Not yet implemented")
-}
+data class Spirit(override val name: String, override val level: Pair<Int, Int>) : Creature
 
-class Decay(name: String, level: Pair<Int, Int>) : Creature {
-  override val isSummonable: Boolean
-    get() = TODO("Not yet implemented")
-}
+data class Decay(override val name: String, override val level: Pair<Int, Int>) : Creature
